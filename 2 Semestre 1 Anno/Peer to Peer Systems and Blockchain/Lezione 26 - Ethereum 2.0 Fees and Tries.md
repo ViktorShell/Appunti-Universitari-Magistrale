@@ -114,7 +114,7 @@ La fee effettivamente pagata sarà: `gas usato × (baseFeePerGas + tip effettivo
 >
 > Tip effettivo = min(20, 110 − 100) = **10 gwei** (il cap abbassa il tip).
 >
-> - Fee totale: 21.000 × (100 + 10) = 2.310.000 gwei = **0,00231 ETH**
+> - Fee totale: 21.000 × (100 + 20) = 2.310.000 gwei = **0,00231 ETH**
 > - Validator ricevono: 0,00021 ETH; Bruciati: 0,0021 ETH
 > - La transazione viene inclusa, solo il tip si riduce.
 
