@@ -501,7 +501,7 @@ Questa sezione contiene i **prompt completi e pronti all'uso** da dare in sequen
 
 ### Prompt 0 — Setup del Progetto Hardhat
 
-```
+````
 Sto sviluppando un progetto Ethereum per il corso Peer-to-Peer Systems and Blockchain dell'Università di Pisa (A.A. 2025/26). Il progetto è un servizio di lending decentralizzato su Ethereum con oracolo Bitcoin.
 
 Crea la struttura di progetto Hardhat completa con le seguenti specifiche:
@@ -552,7 +552,7 @@ Crea tutti i file con il contenuto minimo (placeholder con commenti TODO dove il
 4. Il comando npm per installare tutto
 
 Non scrivere ancora la logica dei contratti.
-```
+````
 
 ---
 
@@ -656,7 +656,7 @@ Fornisci entrambi i file Python completi e funzionanti. Aggiungi un piccolo scri
 
 ### Prompt 3 — LendingPool: Deposit, Withdraw, Struttura Base
 
-```
+````
 Sto sviluppando `LendingPool.sol`, il contratto principale di un servizio di lending decentralizzato su Ethereum. Questo prompt implementa la struttura base e le operazioni di deposit/withdraw. Userò prompt successivi per aggiungere le proposte, il voto e la risoluzione.
 
 Il contratto deve essere UPGRADEABLE usando il pattern UUPS di OpenZeppelin 5.x.
@@ -733,13 +733,13 @@ Fornisci il contratto Solidity completo per questa parte e un test Hardhat (`Len
 5. Withdraw oltre disposable → revert
 6. totalDisposableValue() con 3 contributor
 7. Un contributor che si toglie dal pool dopo withdraw totale
-```
+````
 
 ---
 
 ### Prompt 4 — LendingPool: Proposte di Prestito e Voting
 
-```
+````
 Continuo lo sviluppo di `LendingPool.sol`. Ho già implementato deposit(), withdraw(), e la struttura base (vedi codice allegato). Ora aggiungi la logica delle proposte di prestito e del sistema di voto.
 
 [ALLEGA: LendingPool.sol dal prompt precedente]
@@ -814,13 +814,13 @@ Fornisci il LendingPool.sol aggiornato (solo le parti aggiunte/modificate, con c
 4. vote da non-contributor → revert  
 5. doppio voto → revert
 6. voto su proposta inesistente → revert
-```
+````
 
 ---
 
 ### Prompt 5 — LendingPool: Risoluzione Proposta e Deploy LoanContract
 
-```
+````
 Continuo lo sviluppo di `LendingPool.sol` e implemento `LoanContract.sol`. Questa è la parte più complessa: la risoluzione delle proposte di prestito con voto ponderato, il lock proporzionale dei fondi, e il deploy del contratto per il singolo prestito.
 
 [ALLEGA: LendingPool.sol aggiornato e LoanContract.sol placeholder]
@@ -960,7 +960,7 @@ Fornisci LendingPool.sol (parti modificate) e LoanContract.sol completo fino al 
 4. Resolve con majority reject → ProposalRejected
 5. Resolve approvato → ProposalApproved, LoanContract deployato, ETH trasferito all'applicant
 6. Verifica lock proporzionale con 3 contributor (10/20/30, loan=12)
-```
+````
 
 ---
 
@@ -1204,7 +1204,7 @@ Fornisci lo script Python completo con commenti esplicativi sulle parti non ovvi
 
 ### Prompt 10 — Gas Measurement
 
-```
+````
 Implemento la misurazione del gas per tutte le operazioni del servizio di lending. [ALLEGA: tutti i contratti .sol e i test esistenti]
 
 Crea un file `test/GasMeasurement.test.js` in Hardhat che misura il gas di ogni operazione e stampa una tabella riassuntiva.
@@ -1241,13 +1241,13 @@ Alla fine stampa anche il valore calcolato della `minOracleFee` = gasUsed(update
 Fornisci il file di test completo. Il test non deve fare assert (non è un test di correttezza), ma solo misurare e stampare.
 
 Poi crea anche uno script Python equivalente `python/gas_measurement.py` che fa la stessa cosa interagendo con la chain privata reale (non con Hardhat simulate).
-```
+````
 
 ---
 
 ### Prompt 11 — Vulnerabilità Reentrancy e Attacco
 
-```
+````
 Implemento la dimostrazione della vulnerabilità di reentrancy nel contratto LendingPool. Vedi il tutorial del corso per il pattern standard.
 
 [ALLEGA: LendingPool.sol completo]
@@ -1295,7 +1295,7 @@ IMPORTANTE:
 - Commenta il codice dell'attaccante per spiegare ogni passo
 
 Fornisci tutti e tre i file completi.
-```
+````
 
 ---
 
