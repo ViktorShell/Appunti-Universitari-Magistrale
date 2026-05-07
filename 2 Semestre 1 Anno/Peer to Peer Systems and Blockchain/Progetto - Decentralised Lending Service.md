@@ -516,13 +516,14 @@ project/
 │   │   ├── LoanContract.sol
 │   │   └── MaliciousContributor.sol  (placeholder vuoto)
 │   ├── test/
-│   │   ├── Oracle.test.js
-│   │   ├── LendingPool.test.js
-│   │   ├── Reentrancy.test.js
-│   │   └── GasMeasurement.test.js
+│   │   ├── Oracle.test.ts
+│   │   ├── LendingPool.test.ts
+│   │   ├── Reentrancy.test.ts
+│   │   └── GasMeasurement.test.ts
 │   ├── scripts/
-│   │   └── deploy.js
-│   ├── hardhat.config.js
+│   │   └── deploy.ts
+│   ├── hardhat.config.ts
+│   ├── tsconfig.json
 │   └── package.json
 ├── python/
 │   ├── oracle/
@@ -534,22 +535,29 @@ project/
 │   └── gas_measurement.py
 ```
 
-DIPENDENZE da installare (package.json):
-- hardhat ^2.22.0
-- @nomicfoundation/hardhat-toolbox
+STACK TECNOLOGICO (Hardhat v3 + viem + TypeScript):
+- hardhat ^3.0.0
+- @nomicfoundation/hardhat-toolbox-viem (NON hardhat-toolbox — usa viem invece di ethers)
 - @openzeppelin/contracts ^5.0.0
 - @openzeppelin/contracts-upgradeable ^5.0.0
-- ethers ^6.0.0
+- viem ^2.0.0
+- typescript ~5.8.0
 
-hardhat.config.js deve configurare due reti:
-1. "hardhat" (default, per i test)
-2. "privatechain" con url "http://127.0.0.1:8545" e chainId 12345 (o quello nel genesis file)
+NON installare: ethers, @openzeppelin/hardhat-upgrades, mocha, chai (non servono con Hardhat v3 + viem).
+hardhat.config.ts deve configurare due reti:
+
+1. "hardhat" (default, per i test) con tipo "edr-simulated"
+2. "privatechain" con url "http://127.0.0.1:8545"
+
+I test usano `node:test` + `node:assert/strict` (built-in Node.ts), non mocha/chai. I wallet clients vengono da `viem.getWalletClients()`.
 
 Crea tutti i file con il contenuto minimo (placeholder con commenti TODO dove il codice verrà scritto nei prompt successivi). Fornisci:
-1. Il package.json completo
-2. Il hardhat.config.js completo
-3. I file placeholder .sol con SPDX license, versione pragma ^0.8.20, e struttura vuota
-4. Il comando npm per installare tutto
+
+1. Il package.json completo (con "type": "module" e dipendenze corrette)
+2. Il hardhat.config.ts completo
+3. Il tsconfig.json
+4. I file placeholder .sol con SPDX license, versione pragma ^0.8.20, e struttura vuota
+5. Il comando npm per installare tutto
 
 Non scrivere ancora la logica dei contratti.
 ````
@@ -588,7 +596,7 @@ IMPORTANTE:
 - NON usare `transfer()` o `send()` (usa `call{value:}` con controllo di successo)
 - Aggiungi un `receive()` vuoto al contratto per accettare ETH
 
-Fornisci il file Solidity completo e un test Hardhat (`Oracle.test.js`) che verifichi:
+Fornisci il file Solidity completo e un test Hardhat (`Oracle.test.ts`) che verifichi:
 1. Deploy corretto con operator e minFee
 2. requestUpdate con fee corretta → emette evento
 3. requestUpdate con fee insufficiente → revert
@@ -597,7 +605,26 @@ Fornisci il file Solidity completo e un test Hardhat (`Oracle.test.js`) che veri
 6. getBalance per indirizzo noto e sconosciuto
 7. Misura del gas della funzione update() e stampa il valore
 
-Il test deve usare ethers.js v6 e Hardhat.
+Il test deve usare viem e Hardhat 3. Struttura test:
+
+````typescript
+import assert from "node:assert/strict";
+import { describe, it } from "node:test";
+import { network } from "hardhat";
+describe("BitcoinOracle", async function () {
+
+const { viem } = await network.create();
+
+// ...
+
+it("test case", async function () { /* ... */ });
+
+});
+
+````
+```
+
+Non usare ethers.js, mocha, chai, o expect.
 ```
 
 ---
@@ -725,7 +752,7 @@ IMPORTANTE:
 - Usa ReentrancyGuardUpgradeable per proteggere deposit() e withdraw()
 - NON usare transfer() o send() per ETH
 
-Fornisci il contratto Solidity completo per questa parte e un test Hardhat (`LendingPool.test.js`, sezione "Pool Management") che verifichi:
+Fornisci il contratto Solidity completo per questa parte e un test Hardhat (`LendingPool.test.ts`, sezione "Pool Management") che verifichi:
 1. Deploy tramite proxy ERC1967
 2. Deposit corretto (aggiorna stato, emette evento)
 3. Deposit sotto MIN_DEPOSIT → revert
@@ -1077,29 +1104,39 @@ Implemento il pattern di upgradeability UUPS per `LendingPool.sol`. [ALLEGA: Len
 
 Devo:
 1. Verificare che LendingPool erediti da UUPSUpgradeable e OwnableUpgradeable (OpenZeppelin 5.x)
-2. Rimuovere qualsiasi constructor e usare `initialize()` con `initializer` modifier
-3. Implementare `_authorizeUpgrade(address newImplementation) internal override onlyOwner {}`
-4. Creare un contratto `LendingPoolV2.sol` di test (aggiunge solo una funzione `version() returns (string)` che ritorna "v2") per dimostrare l'upgrade
-5. Scrivere il deploy script (`scripts/deploy.js`) che:
-   - Deploya BitcoinOracle
-   - Deploya LendingPool tramite ERC1967Proxy (il proxy chiama `initialize(oracleAddress)`)
-   - Stampa gli indirizzi di tutti i contratti
-6. Scrivere un test Hardhat che:
-   - Deploya LendingPool V1 tramite proxy
-   - Verifica che funzioni correttamente (deposit)
-   - Fa upgrade a LendingPoolV2 tramite `upgrades.upgradeProxy` di hardhat-upgrades
-   - Verifica che lo stato (depositi esistenti) sia preservato dopo l'upgrade
-   - Verifica che la nuova funzione `version()` sia disponibile
+2. Verificare che il costruttore chiami `_disableInitializers()` e la logica di setup sia in `initialize()` con modifier `initializer`
 
-Usa `@openzeppelin/hardhat-upgrades` plugin. Aggiorna `hardhat.config.js` per includerlo.
+3. Verificare `_authorizeUpgrade(address newImplementation) internal override onlyOwner {}`
 
-IMPORTANTE: In OpenZeppelin 5.x, le variabili di storage nelle classi upgradeable devono usare ERC7201 namespaced storage per evitare collisioni durante gli upgrade. Mostra come implementarlo correttamente oppure usa la struttura classica con le dovute avvertenze.
+4. Creare un contratto `LendingPoolV2.sol` di test: eredita `LendingPool` e aggiunge solo `version() external pure returns (string)` che ritorna "v2". Nessun nuovo storage → nessuna collisione di layout.
+
+5. Verificare che `scripts/deploy.ts` deploya correttamente:
+
+- BitcoinOracle
+- LendingPool implementation
+- ERC1967Proxy (wrapper `LendingPoolProxy`) che chiama `initialize(oracleAddress)`
+
+6. Scrivere `test/Upgradeability.test.ts` che:
+
+- Deploya LendingPool V1 tramite proxy
+- Verifica funzionamento V1 (deposit)
+- Deploya LendingPoolV2 implementation
+- Chiama `pool.write.upgradeToAndCall([v2Impl.address, "0x"], { account: owner.account })`
+- Verifica che lo stato (depositi esistenti) sia preservato dopo l'upgrade
+- Verifica che `version()` restituisca "v2"
+- Verifica che un non-owner non possa fare upgrade (revert OwnableUnauthorizedAccount) 
+
+NOTA su storage layout: LendingPoolV2 eredita LendingPool, quindi il layout è automaticamente preservato (storage del parent viene prima). Non è necessario ERC-7201 namespaced storage per questo caso; è necessario solo se si aggiungono nuove variabili di stato in V2 senza ereditarietà. 
 
 Fornisci:
-1. LendingPool.sol (versione finale con UUPS)
-2. LendingPoolV2.sol (versione di test)
-3. scripts/deploy.js aggiornato
-4. Test di upgradeability
+
+1. LendingPool.sol (verifica finale UUPS — già implementato nei prompt precedenti)
+
+2. LendingPoolV2.sol (contratto di test)
+
+3. scripts/deploy.ts (verifica che deploya correttamente via ERC1967Proxy)
+
+4. test/Upgradeability.test.ts (usando viem + node:test, NON mocha/chai/ethers)
 ```
 
 ---
@@ -1207,7 +1244,7 @@ Fornisci lo script Python completo con commenti esplicativi sulle parti non ovvi
 ````
 Implemento la misurazione del gas per tutte le operazioni del servizio di lending. [ALLEGA: tutti i contratti .sol e i test esistenti]
 
-Crea un file `test/GasMeasurement.test.js` in Hardhat che misura il gas di ogni operazione e stampa una tabella riassuntiva.
+Crea un file `test/GasMeasurement.test.ts` in Hardhat che misura il gas di ogni operazione e stampa una tabella riassuntiva. Usa viem + node:test (NON mocha/chai/ethers). Per ottenere il gas: `const receipt = await publicClient.getTransactionReceipt({ hash: txHash }); receipt.gasUsed`.
 
 OPERAZIONI DA MISURARE:
 1. BitcoinOracle.requestUpdate(btcAddress) — con fee corretta
@@ -1282,7 +1319,7 @@ Un contratto attaccante che:
    - Altrimenti: smette di richiamare (evita revert per fondi insufficienti)
 5. Dopo l'attacco: ha prelevato molto più di `depositAmount` dal pool
 
-STEP 3: Crea `test/Reentrancy.test.js` con:
+STEP 3: Crea `test/Reentrancy.test.ts` con:
 - Setup: 3 victim contributors depositano 2 ETH ciascuno nel pool vulnerabile
 - Attacker deposita 0.1 ETH
 - Attacker esegue l'attacco
@@ -1302,9 +1339,9 @@ Fornisci tutti e tre i file completi.
 ### Prompt 12 — Hardhat Test Suite Completa
 
 ```
-Completa la suite di test Hardhat per il progetto di lending decentralizzato. Ho già i test parziali da prompt precedenti. [ALLEGA: tutti i file test/*.test.js esistenti e tutti i contratti]
+Completa la suite di test Hardhat per il progetto di lending decentralizzato. Ho già i test parziali da prompt precedenti. [ALLEGA: tutti i file test/*.test.ts esistenti e tutti i contratti]
 
-Crea o integra in `test/LendingPool.test.js` i seguenti scenari mancanti:
+Crea o integra in `test/LendingPool.test.ts` i seguenti scenari mancanti:
 
 SCENARIO A: Prestito fallito e compensazione
 1. 3 contributor depositano (1 ETH, 2 ETH, 3 ETH)
@@ -1421,7 +1458,7 @@ Fornisci:
 > - [ ] `python/setup.py`, `python/demo.py`, `python/contributor_bot.py`
 > - [ ] `python/oracle/oracle_service.py` e `python/oracle/btc_utils.py`
 > - [ ] `python/gas_measurement.py`
-> - [ ] Test suite completa (file `.test.js`)
+> - [ ] Test suite completa (file `.test.ts`)
 > - [ ] Report PDF (max 5 pagine)
 > - [ ] Tutto in un unico `.zip` con struttura di cartelle intelligibile
 
