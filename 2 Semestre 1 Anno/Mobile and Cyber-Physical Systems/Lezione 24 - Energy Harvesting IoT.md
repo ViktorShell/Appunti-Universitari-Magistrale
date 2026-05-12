@@ -328,9 +328,13 @@ L'approccio si concentra su fonti non controllabili ma prevedibili perché:
 
 **Condizione 1 — Produzione:** l'energia prodotta in $[0, T]$ è vincolata linearmente:
 
+![[Pasted image 20260512144552.png]]
+
 $$\rho_s T - \sigma \leq E_s(T) \leq \rho_s T + \sigma$$
 
 **Condizione 2 — Carico:** l'energia consumata in $[0, T]$ è vincolata superiormente:
+
+![[Pasted image 20260512144607.png]]
 
 $$E_c(T) \leq \rho_c T + \delta$$
 
