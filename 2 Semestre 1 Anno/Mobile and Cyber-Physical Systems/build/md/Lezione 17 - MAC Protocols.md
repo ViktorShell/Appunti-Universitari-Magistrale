@@ -228,12 +228,3 @@ Il meccanismo per la consegna dei messaggi verso uno slave è il seguente:
 
 ## Domande d'esame
 
-> [!question] Possibili domande d'esame
->
-> - Qual è il tradeoff fondamentale nei protocolli MAC per IoT e come i tre approcci (sincronizzazione, preamble sampling, polling) lo affrontano diversamente?
-> - In S-MAC, perché la latenza in percorsi multi-hop può essere elevata? In quale condizione si riduce?
-> - Perché in B-MAC il preambolo deve essere più lungo del periodo di sleep del ricevitore?
-> - In B-MAC, calcola il duty cycle del preamble sampling se $t_{check} = 4 \times 10^{-4}$ s e la frequenza di campionamento è 5 Hz: $DC_{check} = f_c \times t_{check} = 5 \times 4 \times 10^{-4} = 2 \times 10^{-3} = 0.2\%$.
-> - Come X-MAC riduce il costo energetico del preambolo rispetto a B-MAC?
-> - In BoX-MAC il preambolo è un frame dati ripetuto: quali vantaggi porta in termini di latenza e overhead?
-> - Descrivi il meccanismo di polling in IEEE 802.15.4: cosa fa il master quando riceve un messaggio per uno slave?

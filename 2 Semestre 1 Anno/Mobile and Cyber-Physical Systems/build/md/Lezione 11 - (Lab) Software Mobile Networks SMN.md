@@ -110,16 +110,3 @@ Le applicazioni di controllo sono il vero "cervello" della rete: implementano le
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Cos'è il SDN e quale problema risolve rispetto alle architetture tradizionali?
-> - Qual è la differenza tra Data Plane (Forwarding) e Control Plane (Routing)?
-> - Cos'è il traffico East-West e perché le architetture tradizionali faticano a gestirlo?
-> - Descrivere i tre scenari di Traffic Engineering che risultano impossibili con il routing tradizionale.
-> - Quali sono i tre limiti strutturali delle reti tradizionali (architettura statica, incoerenza delle policy, vendor lock-in)?
-> - Descrivere i tre componenti dell'architettura SDN (data-plane switches, controller, network-control apps) e il ruolo di ciascuno.
-> - Cosa significa che le network-control apps sono "unbundled"? Qual è il vantaggio?
-> - Cosa sono le Southbound e Northbound API in un'architettura SDN?
-> - Cos'è l'astrazione match-action e perché è fondamentale per il data plane programmabile?
-> - Perché il controller SDN è "logicamente centralizzato" ma fisicamente distribuito?
-> - Qual è la differenza tra $T_i = SPF(Topology, link\_weights)$ e $\mathcal{F}: S(t) \rightarrow \{T_1, \ldots, T_n\}$?

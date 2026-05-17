@@ -300,13 +300,3 @@ Questo approccio si integra naturalmente con la **Network Function Virtualizatio
 >
 > **Service Function Chaining** con SDN permette di comporre funzioni di rete (firewall, IDS, load balancer...) in catene dinamiche, senza ricablaggio fisico — specialmente potente in combinazione con NFV.
 
-> [!question] Possibili domande d'esame
->
-> - Perché Google ha sviluppato B4? Quali sono i limiti delle WAN tradizionali che B4 risolve?
-> - Descrivere le tre categorie di traffico in B4 e come influenzano le scelte di traffic engineering.
-> - Descrivere i tre stadi di migrazione verso SDN in B4. Perché BGP è stato mantenuto?
-> - Come funziona il TE Server di B4? Cosa sono i Flow Group, i Tunnel e i Tunnel Group?
-> - Quali sono i limiti di OpenFlow che hanno motivato lo sviluppo di P4?
-> - Cosa descrive un programma P4? Quali sono le sue tre componenti principali?
-> - Come interagiscono control plane e data plane in un sistema P4?
-> - Cos'è il Service Function Chaining? Come SDN abilita SFC dinamico?

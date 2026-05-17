@@ -107,14 +107,3 @@ Sul fronte dell'impatto sui protocolli superiori, in teoria il layer wireless do
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra routing indiretto e routing diretto? Vantaggi e svantaggi di ciascuno.
-> - Cos'è il triangle routing e quando si manifesta?
-> - Quali tre protocolli sono necessari per implementare il routing indiretto?
-> - Descrivi le quattro fasi della gestione della mobilità in 4G: quali entità sono coinvolte in ciascuna?
-> - Qual è il ruolo di MME, HSS, S-GW e P-GW nell'architettura 4G?
-> - Quali due tunnel vengono creati nella fase di configurazione del piano dati? Perché sono separati?
-> - Come avviene un handover tra due Base Station? Descrivi i sette passi. Quale entità decide di avviarlo e quale sceglie la target BS?
-> - Perché nel routing diretto un cambio di rete durante una sessione è più complesso che nel routing indiretto?
-> - Perché le perdite radio degradano le prestazioni TCP nelle reti mobili?

@@ -420,12 +420,3 @@ Quando un host A invia il primo pacchetto verso B e lo switch non ha una regola 
 
 La Host Table cresce progressivamente man mano che gli host comunicano, costruendo una mappa completa della rete.
 
-> [!question] Possibili domande d'esame
->
-> - Come differisce il forwarding generalizzato dal destination-based forwarding? Quali campi possono essere usati per il match e quali azioni sono disponibili?
-> - Descrivere la struttura di una flow entry OpenFlow (match, action, priority, counters) e fare un esempio di regola per implementare un firewall.
-> - Descrivere le tre classi di messaggi OpenFlow (controller-to-switch, switch-to-controller, symmetric) e gli esempi principali per ciascuna.
-> - Come funziona la flow table pipeline in OpenFlow? Cosa succede in caso di table-miss?
-> - Descrivere il processo di topology discovery in una rete SDN: quale protocollo usa, quali messaggi vengono scambiati, e come il controller costruisce la mappa dei link.
-> - Qual è la differenza tra Path Computation in SDN e routing distribuito tradizionale? Perché i FlowMod vengono inviati in ordine inverso?
-> - Confrontare l'architettura di OpenDaylight (ODL) e ONOS: cosa li distingue in termini di struttura interna e approccio alla programmabilità?

@@ -109,10 +109,3 @@ I gateway IoT svolgono funzioni di sicurezza essenziali: l'identificazione di og
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Cos'è un Cyber-Physical System e in cosa si distingue da un sistema puramente informatico o puramente fisico?
-> - Descrivere le quattro generazioni di Internet e le caratteristiche che differenziano l'IoT dalle generazioni precedenti.
-> - Quali sono le differenze tra Edge Computing, Fog Computing e Cloud Computing in un'architettura IoT? In quale scenario conviene usare il Fog?
-> - Quali funzionalità offre una piattaforma IoT e perché è necessario uno strato software intermedio tra dispositivi e applicazioni?
-> - Quali sono le principali sfide di sicurezza e interoperabilità nell'IoT e come vengono affrontate a livello architetturale?

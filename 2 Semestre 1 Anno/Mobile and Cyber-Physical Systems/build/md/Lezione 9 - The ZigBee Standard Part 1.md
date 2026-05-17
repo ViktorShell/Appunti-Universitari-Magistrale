@@ -158,13 +158,3 @@ Quando nella Routing Table non è presente un'entry valida, il router avvia il *
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono i requisiti principali e le caratteristiche dello standard ZigBee? Come si relaziona con IEEE 802.15.4?
-> - Descrivere le quattro Service Primitives e il ruolo di ciascuna nello stack protocollare.
-> - Come avviene la Network Formation? Descrivere la sequenza di primitive coinvolte tra NWK e MAC.
-> - Quali sono le differenze tra Join through Association e Direct Join?
-> - Come funziona l'indirizzamento ad albero? Cosa sono $R_m$, $D_m$, $L_m$? Definire e applicare la formula $C_{skip}$.
-> - Data una rete con $R_m$, $D_m$, $L_m$ noti, calcolare il range di indirizzi assegnato a un router che si aggrega come $k$-esimo figlio di un dato nodo a profondità $d$.
-> - Confrontare Tree routing e Mesh routing: meccanismi, vantaggi, limitazioni e compatibilità con il beaconing. Possono coesistere?
-> - Come funziona il Route Discovery Protocol? Quali informazioni contiene la Route Discovery Table? Un nodo intermedio può rispondere all'RREQ?

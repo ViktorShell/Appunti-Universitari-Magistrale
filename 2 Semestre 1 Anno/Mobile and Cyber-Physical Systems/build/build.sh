@@ -14,6 +14,9 @@ find md -maxdepth 1 -name "* 2.md" ! -name "*Part 2.md" -print -delete
 echo "==> 3. Rendering blocchi mermaid -> PNG"
 python3 render_mermaid.py
 
+echo "==> 3b. Rimozione blocchi 'Possibili domande d'esame'"
+python3 strip_exam_questions.py
+
 echo "==> 4. Concatenazione ordinata"
 python3 concat.py
 

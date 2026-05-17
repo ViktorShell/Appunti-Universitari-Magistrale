@@ -465,12 +465,3 @@ I test simulano applicazioni con duty cycle tra 2% e 46% su batteria KL-SUN3W da
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Enuncia il teorema di Kansal: quali sono le tre condizioni sufficienti per la neutralità energetica?
-> - Descrivi la funzione di utility $u(dc)$ e spiega come si calcolano i parametri $\alpha$ e $\beta$.
-> - Descrivi l'algoritmo di Kansal nei due casi (sovraproduzione e sottoproduzione) e applica l'algoritmo a una tabella di produzione fornita.
-> - Qual è il ruolo del filtro EWMA nella previsione della produzione energetica?
-> - Cos'è un "task" nel modello task-based e perché il problema di ottimizzazione è NP-Hard?
-> - Scrivi la ricorrenza di programmazione dinamica per il modello task-based e discutine la complessità.
-> - Quali sono i limiti dell'algoritmo di Kansal rispetto al modello task-based?

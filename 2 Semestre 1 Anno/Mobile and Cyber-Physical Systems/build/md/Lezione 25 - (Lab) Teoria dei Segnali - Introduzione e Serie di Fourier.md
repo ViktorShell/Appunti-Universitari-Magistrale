@@ -253,15 +253,3 @@ Questo passaggio è cruciale: la serie di Fourier non può rappresentare segnali
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono le quattro classi di segnali secondo la classificazione tempo/ampiezza? Fai esempi.
-> - Cos'è il bitrate di una sorgente digitale? Come dipende da frequenza di campionamento e bit per campione?
-> - Enuncia il teorema di Shannon sulla capacità di canale. Come lega SNR, banda e bitrate?
-> - Cos'è la serie di Fourier? Scrivi la formula generale e i coefficienti $a_0$, $a_n$, $b_n$.
-> - Quali sono le condizioni sufficienti di Dirichlet per l'esistenza della serie di Fourier?
-> - Cos'è il fenomeno di Gibbs? Perché non scompare aggiungendo più armoniche?
-> - Come si passa dalla serie di Fourier reale a quella in forma esponenziale complessa?
-> - Cos'è lo spettro di un segnale? Perché si rappresentano due diagrammi separati (ampiezza e fase)?
-> - Perché la serie di Fourier di un segnale aperiodico produce la sua estensione periodica?
-> - Calcola i coefficienti della serie di Fourier per un'onda quadra semplice (es. $s(t) = 1$ per $0 < t < T/2$, $s(t) = -1$ per $T/2 < t < T$).

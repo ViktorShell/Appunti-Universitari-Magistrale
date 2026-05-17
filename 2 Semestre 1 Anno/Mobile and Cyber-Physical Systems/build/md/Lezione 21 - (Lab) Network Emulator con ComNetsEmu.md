@@ -457,12 +457,3 @@ Durante i laboratori è utile avere familiarità con i comandi base di Docker.
 | `docker build <path>` | Costruisce un'immagine da un Dockerfile |
 | `docker commit <id> <name>` | Crea una nuova immagine da un container modificato |
 
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra Mininet e ComNetsEmu?
-> - Come vengono implementati gli host virtuali in Mininet? (network namespace)
-> - Cosa sono le veth pairs e a cosa servono?
-> - Come si configura il delay di un link virtuale in Mininet con `tc`?
-> - Qual è il ruolo di Docker in ComNetsEmu rispetto al tipo di host di default di Mininet?
-> - Cosa fa la classe `APPContainerManager` in ComNetsEmu?
-> - Qual è la differenza tra `DockerHost` e un host Mininet tradizionale?

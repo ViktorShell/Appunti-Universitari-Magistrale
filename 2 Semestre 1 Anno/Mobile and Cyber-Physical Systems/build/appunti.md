@@ -109,14 +109,6 @@ I gateway IoT svolgono funzioni di sicurezza essenziali: l'identificazione di og
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Cos'è un Cyber-Physical System e in cosa si distingue da un sistema puramente informatico o puramente fisico?
-> - Descrivere le quattro generazioni di Internet e le caratteristiche che differenziano l'IoT dalle generazioni precedenti.
-> - Quali sono le differenze tra Edge Computing, Fog Computing e Cloud Computing in un'architettura IoT? In quale scenario conviene usare il Fog?
-> - Quali funzionalità offre una piattaforma IoT e perché è necessario uno strato software intermedio tra dispositivi e applicazioni?
-> - Quali sono le principali sfide di sicurezza e interoperabilità nell'IoT e come vengono affrontate a livello architetturale?
-
 ```{=latex}
 \newpage
 ```
@@ -237,14 +229,6 @@ Poiché numerosi endpoint faticano a gestire la mutua autenticazione per limiti 
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono le differenze tra Edge Computing, Fog Computing e Cloud Computing nell'IoT, e in quali scenari è preferibile ciascun approccio?
-> - Come funziona il Federated Learning e quali sono i principali attacchi a cui è soggetto?
-> - Perché i database NoSQL sono preferiti ai database relazionali nei contesti IoT? Quali vantaggi offre MongoDB?
-> - Cosa si intende per vendor lock-in e vertical silos? Come il 5G e gli standard di interoperabilità cercano di ovviare a questi problemi?
-> - Quali sono le principali vulnerabilità di sicurezza nei dispositivi IoT embedded e come vengono mitigate a livello di piattaforma?
-
 ```{=latex}
 \newpage
 ```
@@ -330,14 +314,6 @@ In un'architettura IoT, il gateway agisce spesso come punto centrale di applicaz
 > [!warning] Dispositivi vincolati e limiti di sicurezza
 >
 > I **dispositivi vincolati** (*constrained devices*) pongono ostacoli concreti all'implementazione di questi requisiti. Ad esempio, garantire la sicurezza dei dati archiviati su un dispositivo privo di capacità hardware di crittografia può risultare impraticabile. Con la diffusione del *Massive IoT*, la **privacy** diventa un'area di crescente preoccupazione: l'enorme mole di dati sensibili — medici, di posizione, sulle abitudini — raccolti da governi e aziende amplifica i rischi in modo proporzionale alla scala del deployment.
-
-> [!question] Possibili domande d'esame
->
-> - Cosa si intende per vertical silo e vendor lock-in nell'IoT? Qual è la relazione tra i due concetti?
-> - Quali sono le tre macro-categorie di scenari d'uso del 5G e quali requisiti tecnici le caratterizzano?
-> - Descrivere le configurazioni di integrazione Tipo A, B, C e D: quando è necessario un gateway applicativo?
-> - Quali sono i requisiti di sicurezza identificati dalla raccomandazione ITU-T Y.2066?
-> - Qual è il ruolo del gateway nella sicurezza IoT e quali limitazioni incontrano i dispositivi vincolati?
 
 ```{=latex}
 \newpage
@@ -497,21 +473,6 @@ Quando un dispositivo IoT si disconnette temporaneamente, il rischio è di perde
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono i limiti dello stack TCP/IP tradizionale per l'IoT? Quali requisiti specifici impongono i dispositivi IoT a livello di rete e applicativo?
-> - Descrivere il paradigma publish/subscribe e i tre tipi di disaccoppiamento che introduce rispetto al modello client/server.
-> - Qual è il ruolo del broker MQTT? Quali operazioni svolge?
-> - Quali sono le differenze tra i tre metodi di filtraggio dei messaggi (topic-based, content-based, type-based)?
-> - Descrivere la struttura del pacchetto CONNECT e il significato di ciascun campo (Client ID, Clean Session, Will flags, KeepAlive).
-> - Cosa contiene un pacchetto SUBSCRIBE e come risponde il broker con SUBACK?
-> - Come funzionano le wildcard `+` e `#` nei topic MQTT? Fornire esempi.
-> - Perché si evita di usare il wildcard `#` indiscriminatamente nelle sottoscrizioni?
-> - Spiegare i tre livelli QoS di MQTT: garanzie offerte, meccanismi usati e casi d'uso ideali.
-> - Descrivere il handshake a quattro fasi di QoS 2 (PUBLISH → PUBREC → PUBREL → PUBCOMP). Perché sono necessarie quattro fasi invece di due?
-> - Il QoS tra publisher e broker può differire da quello tra broker e subscriber? Perché?
-> - Cosa sono le persistent session in MQTT e quando conviene usarle?
-
 ```{=latex}
 \newpage
 ```
@@ -638,16 +599,6 @@ Le criticità fisiche descritte sopra creano sfide sistemiche che si ripercuoton
 Per mitigare questi limiti è necessario adottare meccanismi appositi. Il **CSMA/CD**, protocollo standard per reti cablate Ethernet, non può essere utilizzato: un nodo radio non è in grado di trasmettere e ricevere contemporaneamente per "ascoltare" una collisione nel proprio segnale. È quindi necessario un protocollo MAC alternativo. Serve inoltre la gestione dell'**Hand-off** per la transizione tra Access Point, e complessi protocolli di **Routing multi-hop** (per reti ad hoc) capaci di reagire ai cambiamenti arbitrari della topologia di vicinato (*neighborhood*).
 
 Nello stack dei protocolli per reti wireless, mentre i livelli Applicazione e Trasporto (TCP/UDP) restano identici al mondo cablato, le fondamenta si differenziano profondamente. Il livello di Rete per ecosistemi senza infrastruttura si affida a protocolli speciali come AODV, DSR o DYMO. Il livello Datalink implementa l'accesso al mezzo tramite il protocollo **CSMA/CA** (*Carrier Sense Multiple Access with Collision Avoidance*), appositamente studiato per aggirare le trappole dei collegamenti radio.
-
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra una rete wireless single-hop e multi-hop con infrastruttura? Fare esempi concreti.
-> - Perché il CSMA/CD non può essere applicato nelle reti wireless? Quale protocollo lo sostituisce e con quale logica?
-> - Definire la Shannon Capacity e spiegare perché la capacità scala logaritmicamente con l'SNR e non linearmente.
-> - Descrivere il problema del terminale nascosto: come si manifesta e perché il meccanismo di rilevamento delle collisioni classico non lo rileva?
-> - Cosa si intende per Multipath e Coherence Time? Come la velocità del ricevitore influenza il $T_c$?
-> - Spiegare il trade-off tra SNR e scelta dello schema di modulazione (es. BPSK vs QAM-256).
-> - Cosa distingue la banda ISM dalla banda licenziata? Perché la banda 2.4 GHz è particolarmente soggetta a interferenze?
 
 ```{=latex}
 \newpage
@@ -1250,19 +1201,6 @@ Il 5G mantiene la struttura concettuale di AKA ma ne irrobustisce due aspetti ch
 >
 > L'evoluzione dalle reti cellulari analogiche al 5G è una trasformazione architetturale, non solo un aumento di velocità. Il cuore della trasformazione è il passaggio a un **All-IP core** (introdotto in 4G con l'EPC) e poi a una **Service Based Architecture cloud-native** (in 5G con l'NG-Core), con netta separazione di control plane e data plane e con le funzioni di rete organizzate come **microservizi** indipendenti. Il **tunneling GTP** è il pilastro che abilita la mobilità trasparente: gli IP del traffico restano fissi, cambiano solo gli endpoint dei tunnel quando l'utente si sposta. Il protocollo **AKA** garantisce mutua autenticazione UE↔rete sfruttando una chiave simmetrica condivisa fra SIM e home HSS; il 5G rafforza la sicurezza spostando la decisione finale alla home network e cifrando l'IMSI con crittografia a chiave pubblica per prevenire attacchi di tracciamento. Sul fronte radio, **5G NR** combina sub-6 GHz e onde millimetriche con MIMO e densità di celle elevate, abilitando i tre macro-scenari **eMBB**, **URLLC** e **mMTC**.
 
-> [!question] Possibili domande d'esame
->
-> - Descrivi i tre blocchi dell'architettura cellulare 4G/5G (RAN, Backhaul, Mobile Core) e le rispettive responsabilità.
-> - A cosa servono MME, HSS, S-GW e P-GW nel 4G LTE? Quale di questi sta sul piano dati e quale su quello di controllo?
-> - Spiega in dettaglio come il tunneling GTP supporti la mobilità senza interrompere le sessioni TCP attive.
-> - Confronta il modello 4G EPC con il 5G NG-Core: quale ruolo del 4G corrisponde a quale Network Function 5G?
-> - Cos'è la Service Based Architecture? Perché il 5G la adotta?
-> - Descrivi i passi del protocollo AKA in 4G. Perché basta confrontare $\text{res}_M$ con $\text{xres}_{HSS}$?
-> - Quali sono le due differenze principali fra autenticazione 4G e 5G? Quale problema concreto risolvono?
-> - Cosa distingue Standalone e Non-Standalone come opzioni di deployment 5G?
-> - Perché l'UPF abilita il Multi-Access Edge Computing?
-> - Confronta brevemente Wi-Fi e 4G LTE dal punto di vista dell'autenticazione.
-
 ```{=latex}
 \newpage
 ```
@@ -1416,19 +1354,6 @@ CoAP supporta anche un modello di comunicazione asincrona che ne avvicina il com
 Entrambi i protocolli hanno oggi lo status di standard riconosciuti per l'IoT. CoAP è più giovane e i suoi meccanismi di affidabilità della consegna sono meno sofisticati della gerarchia QoS di MQTT, ma la sua leggerezza e la base UDP lo rendono insostituibile negli scenari più vincolati.
 
 ---
-
-> [!question] Possibili domande d'esame
->
-> - Cosa memorizza il broker e cosa memorizza il client in una sessione persistente con QoS 2?
-> - Qual è la differenza tra sessione persistente e retained message? Sono meccanismi indipendenti?
-> - In quali quattro circostanze il broker invia il messaggio di last will?
-> - Come è strutturato il Fixed Header di un pacchetto MQTT? Cosa codifica il primo byte?
-> - Perché PubSubClient non supporta QoS 2 e SSL/TLS? Qual è il vincolo architetturale?
-> - Perché HTTP scala male per reti IoT con molti dispositivi rispetto a MQTT?
-> - Quali sono i tre limiti strutturali di MQTT (broker, risorse, TCP)?
-> - Cosa cambia nell'architettura client/server di CoAP rispetto al web tradizionale?
-> - Perché CoAP usa UDP invece di TCP? Quali vantaggi porta e quali svantaggi introduce?
-> - In quale scenario sceglieresti CoAP su MQTT e viceversa?
 
 ```{=latex}
 \newpage
@@ -1593,17 +1518,6 @@ Quando nella Routing Table non è presente un'entry valida, il router avvia il *
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono i requisiti principali e le caratteristiche dello standard ZigBee? Come si relaziona con IEEE 802.15.4?
-> - Descrivere le quattro Service Primitives e il ruolo di ciascuna nello stack protocollare.
-> - Come avviene la Network Formation? Descrivere la sequenza di primitive coinvolte tra NWK e MAC.
-> - Quali sono le differenze tra Join through Association e Direct Join?
-> - Come funziona l'indirizzamento ad albero? Cosa sono $R_m$, $D_m$, $L_m$? Definire e applicare la formula $C_{skip}$.
-> - Data una rete con $R_m$, $D_m$, $L_m$ noti, calcolare il range di indirizzi assegnato a un router che si aggrega come $k$-esimo figlio di un dato nodo a profondità $d$.
-> - Confrontare Tree routing e Mesh routing: meccanismi, vantaggi, limitazioni e compatibilità con il beaconing. Possono coesistere?
-> - Come funziona il Route Discovery Protocol? Quali informazioni contiene la Route Discovery Table? Un nodo intermedio può rispondere all'RREQ?
-
 ```{=latex}
 \newpage
 ```
@@ -1715,18 +1629,6 @@ L'architettura **Mobile IP** (RFC 5944), standardizzata circa vent'anni fa, anti
 Sul fronte dell'impatto sui protocolli superiori, in teoria il layer wireless dovrebbe essere trasparente: il modello _best-effort_ di IP rimane invariato e TCP/UDP girano regolarmente su reti mobili. In pratica le prestazioni degradano sensibilmente. Errori di bit sui link radio e interruzioni transitorie durante gli handover vengono interpretati da TCP come sintomi di congestione di rete, inducendolo a ridurre la _congestion window_ in modo ingiustificato. A questo si aggiungono la limitatezza di banda dei link wireless e i ritardi che penalizzano il traffico in tempo reale.
 
 ---
-
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra routing indiretto e routing diretto? Vantaggi e svantaggi di ciascuno.
-> - Cos'è il triangle routing e quando si manifesta?
-> - Quali tre protocolli sono necessari per implementare il routing indiretto?
-> - Descrivi le quattro fasi della gestione della mobilità in 4G: quali entità sono coinvolte in ciascuna?
-> - Qual è il ruolo di MME, HSS, S-GW e P-GW nell'architettura 4G?
-> - Quali due tunnel vengono creati nella fase di configurazione del piano dati? Perché sono separati?
-> - Come avviene un handover tra due Base Station? Descrivi i sette passi. Quale entità decide di avviarlo e quale sceglie la target BS?
-> - Perché nel routing diretto un cambio di rete durante una sessione è più complesso che nel routing indiretto?
-> - Perché le perdite radio degradano le prestazioni TCP nelle reti mobili?
 
 ```{=latex}
 \newpage
@@ -1842,20 +1744,6 @@ Le applicazioni di controllo sono il vero "cervello" della rete: implementano le
 | 2021+ | ML, 5G, P4 | Intent-Based Networking con AI/ML (Cisco DNA, Mist AI). SDN come base del 5G. Linguaggio **P4** (Programming Protocol-independent Packet Processors) per switch programmabili a line speed. |
 
 ---
-
-> [!question] Possibili domande d'esame
->
-> - Cos'è il SDN e quale problema risolve rispetto alle architetture tradizionali?
-> - Qual è la differenza tra Data Plane (Forwarding) e Control Plane (Routing)?
-> - Cos'è il traffico East-West e perché le architetture tradizionali faticano a gestirlo?
-> - Descrivere i tre scenari di Traffic Engineering che risultano impossibili con il routing tradizionale.
-> - Quali sono i tre limiti strutturali delle reti tradizionali (architettura statica, incoerenza delle policy, vendor lock-in)?
-> - Descrivere i tre componenti dell'architettura SDN (data-plane switches, controller, network-control apps) e il ruolo di ciascuno.
-> - Cosa significa che le network-control apps sono "unbundled"? Qual è il vantaggio?
-> - Cosa sono le Southbound e Northbound API in un'architettura SDN?
-> - Cos'è l'astrazione match-action e perché è fondamentale per il data plane programmabile?
-> - Perché il controller SDN è "logicamente centralizzato" ma fisicamente distribuito?
-> - Qual è la differenza tra $T_i = SPF(Topology, link\_weights)$ e $\mathcal{F}: S(t) \rightarrow \{T_1, \ldots, T_n\}$?
 
 ```{=latex}
 \newpage
@@ -2324,105 +2212,6 @@ La lezione ha costruito un quadro coerente intorno al problema energetico nell'I
 
 L'efficienza energetica si ottiene comprendendo dove va l'energia (radio e processore sono i componenti dominanti, non lo schermo come nel laptop) e applicando il duty cycle per spegnere ogni componente quando non è necessario. Il modello formale permette di calcolare con precisione il consumo per ciclo e il lifetime atteso. La prossima lezione approfondirà i protocolli MAC per l'IoT, che risolvono il problema della coordinazione del duty cycle a livello di rete.
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono le tre interpretazioni della Legge di Moore e come si applicano all'IoT?
-> - Perché la Legge di Moore non risolve automaticamente i problemi di design IoT nel breve termine?
-> - Qual è la differenza nella distribuzione del consumo energetico tra un laptop e un sensore wireless?
-> - Perché tenere la radio in modalità "listen" è quasi costoso quanto ricevere dati?
-> - Come si calcola il duty cycle di un componente a partire dalla specifica comportamentale del firmware?
-> - Dati i parametri hardware di un Mote, saper calcolare: duty cycle di ciascun componente, consumo orario in mAh, lifetime in ore/cicli.
-> - Perché spegnere la radio è una "decisione globale" mentre spegnere il processore è "locale"?
-> - Qual è il trade-off tra edge processing e invio dei campioni grezzi al server in termini di lifetime?
-
-
----
-
-## Approfondimento: Specifiche Reali di una Mote e Modelli di DC
-
-### Specifiche hardware della Mote-class sensor
-
-Per rendere concreto tutto il discorso teorico, le slide riportano le specifiche misurate di un sensore di classe Mote basato su ATmega128L. Questi numeri sono il riferimento per tutti gli esercizi numerici del corso.
-
-![](images/lezione-14-iot-design-img-07.jpg)
-*Fig. — Specifiche hardware complete di una Mote-class sensor: consumo di corrente in ogni stato per microprocessore, radio (con distinzione ricezione/trasmissione), logger (memoria flash) e sensor board. La perdita di carica annua della batteria è del 3%.*
-
-Osservando la tabella emergono dettagli importanti: la radio in ricezione (19,7 mA) consuma leggermente più di quella in trasmissione (17,4 mA) — un effetto già citato che spiega perché il solo ascoltare sia così costoso. Il logger in scrittura (15 mA) ha un consumo paragonabile alla radio, mentre in lettura scende a 4 mA e in sleep a soli 2 μA. Il processore in sleep consuma appena 15 μA.
-
-### Due modelli a confronto: DC 100% vs DC 5%
-
-![](images/lezione-14-iot-design-img-08.jpg)
-*Fig. — Tabella di confronto tra il modello con duty cycle al 100% (tutto sempre acceso) e il modello con duty cycle al 5%, con la percentuale di tempo trascorsa in ciascuno stato per ogni subsistema. Il logger mantiene un DC del 3% in entrambi i modelli.*
-
-Il confronto tra il modello a DC 100% e quello al 5% è illuminante. Nel modello a pieno regime tutti i componenti sono sempre attivi. Nel modello al 5%, grazie alle chiamate `turnOn`/`turnOff`, il processore è attivo solo il 5% del tempo, la radio il 5% diviso tra tx (1%) e rx (4%), e il sensor board appena l'1%. Il logger mantiene un proprio duty cycle del 3% indipendente dagli altri, con parte delle scritture e letture in parallelo ad altri componenti.
-
-![](images/lezione-14-iot-design-img-09.jpg)
-*Fig. — Rappresentazione grafica degli stati per ciascun subsistema nei due modelli (DC 100% in alto, DC 5% in basso). Nel modello a DC 5% i componenti trascorrono quasi tutto il periodo nello stato idle (marrone scuro), con brevi finestre di attività (arancione).*
-
-### Duty cycle: la flessibilità della "forma" del ciclo
-
-Un punto spesso sottovalutato è che il duty cycle specifica solo la **frazione** di tempo attivo, non il suo posizionamento all'interno del periodo. Lo stesso DC del 10% può corrispondere a un burst di attività all'inizio del periodo, uno alla fine, due burst distribuiti, o qualsiasi altra configurazione temporale. Ciò che conta per il consumo medio è la frazione totale.
-
-![](images/lezione-14-iot-design-img-10.jpg)
-*Fig. — Esempi di un componente con DC al 10%: la finestra di attività (arancione) può posizionarsi in qualsiasi punto del periodo. Il consumo medio è identico in tutti i casi; ciò che cambia è la latenza di risposta e la sincronizzabilità con gli altri nodi.*
-
-Questa flessibilità è sfruttata dai protocolli MAC dell'IoT per sincronizzare le finestre di ascolto dei vari nodi: se tutti i vicini sono svegli negli stessi istanti, la comunicazione è possibile anche con DC molto bassi.
-
----
-
-## Esercizio Extra-1: Calcolo Completo con Attività Separate
-
-Questo esercizio è più realistico perché distingue tre fasi operative separate — campionamento, elaborazione e trasmissione — ognuna con la propria durata e i propri componenti attivi.
-
-**Specifiche hardware**: ATmega128L (8 mA full, 0,015 mA sleep), Radio (1 mA xmit, 0,02 mA sleep), Sensor Board (5 mA full, 0,005 mA sleep), Batteria 2000 mAh.
-
-**Comportamento del firmware** (periodo = 1/0,1 Hz = 10 s):
-- Campionamento a 0,1 Hz → ogni 10 s, durata 0,5 ms → processore + sensore attivi
-- Elaborazione dopo ogni campionamento, durata 2 ms → solo processore attivo
-- Trasmissione dopo ogni elaborazione, durata 1 ms → processore + radio attivi
-
-### Calcolo dei duty cycle
-
-Il periodo è 10 secondi (frequenza 0,1 Hz). Le tre attività si svolgono in sequenza nello stesso ciclo, quindi il tempo attivo totale per ciclo è 0,5 + 2 + 1 = 3,5 ms su 10.000 ms.
-
-$$dc_\text{sampling} = \frac{0,5\,\text{ms}}{10.000\,\text{ms}} = 0,00005 \quad (0,005\%)$$
-
-$$dc_\text{processing} = \frac{2\,\text{ms}}{10.000\,\text{ms}} = 0,0002 \quad (0,02\%)$$
-
-$$dc_\text{transmitting} = \frac{1\,\text{ms}}{10.000\,\text{ms}} = 0,0001 \quad (0,01\%)$$
-
-Poiché processore è attivo in tutte e tre le fasi:
-
-$$dc_\text{processor} = dc_\text{sampling} + dc_\text{processing} + dc_\text{transmitting} = 0,00035$$
-
-Il sensor board è attivo solo durante il campionamento: $dc_\text{sensor} = 0,00005$.
-La radio è attiva solo durante la trasmissione: $dc_\text{radio} = 0,0001$.
-
-### Calcolo del consumo per ora
-
-Applicando la formula $E = dc_\text{active} \cdot C_\text{active} + (1 - dc_\text{active}) \cdot C_\text{idle}$ a ciascun componente:
-
-**Sensor board**:
-$$E_\text{sensor} = 0,00005 \cdot 5\,\text{mA} + 0,99995 \cdot 0,005\,\text{mA} \approx 0,00025 + 0,004999 = 0,00525\,\text{mAh}$$
-
-**Processore**:
-$$E_\mu = 0,00035 \cdot 8\,\text{mA} + 0,99965 \cdot 0,015\,\text{mA} \approx 0,0028 + 0,01499 = 0,01779\,\text{mAh}$$
-
-**Radio**:
-$$E_\rho = 0,0001 \cdot 1\,\text{mA} + 0,9999 \cdot 0,02\,\text{mA} \approx 0,0001 + 0,01999 = 0,02010\,\text{mAh}$$
-
-**Totale per ora**: $E_\text{tot} = 0,00525 + 0,01779 + 0,02010 \approx 0,0431\,\text{mAh}$
-
-**Lifetime**: $Lifetime = \frac{2000\,\text{mAh}}{0,0431\,\text{mAh/h}} \approx 46.358\,\text{ore} \approx 5,3\,\text{anni}$
-
-> [!abstract] Sintesi esercizio extra-1
->
-> Grazie a un duty cycle di appena lo 0,035% per il processore e ancora meno per radio e sensore, il consumo orario è ridottissimo (0,043 mAh). Con una batteria da 2000 mAh il lifetime teorico supera i 5 anni. Questo mostra come applicazioni a bassa frequenza di campionamento (0,1 Hz) permettano duty cycle estremi e vita utile pluriennale — il paradigma ideale per il monitoraggio ambientale o strutturale.
-
-> [!warning] Attenzione alle semplificazioni
->
-> In tutti gli esercizi si trascura il costo energetico del turn-on e turn-off dei componenti, che in realtà ha un peso non nullo. Si trascura anche l'autoscarica della batteria (3% annuo per la Mote reale). Questi effetti diventano rilevanti quando il DC è molto basso e il lifetime è nell'ordine degli anni: la batteria potrebbe scaricarsi per autoscarica prima che si esaurisca per consumo attivo.
-
 ```{=latex}
 \newpage
 ```
@@ -2849,16 +2638,6 @@ Quando un host A invia il primo pacchetto verso B e lo switch non ha una regola 
 
 La Host Table cresce progressivamente man mano che gli host comunicano, costruendo una mappa completa della rete.
 
-> [!question] Possibili domande d'esame
->
-> - Come differisce il forwarding generalizzato dal destination-based forwarding? Quali campi possono essere usati per il match e quali azioni sono disponibili?
-> - Descrivere la struttura di una flow entry OpenFlow (match, action, priority, counters) e fare un esempio di regola per implementare un firewall.
-> - Descrivere le tre classi di messaggi OpenFlow (controller-to-switch, switch-to-controller, symmetric) e gli esempi principali per ciascuna.
-> - Come funziona la flow table pipeline in OpenFlow? Cosa succede in caso di table-miss?
-> - Descrivere il processo di topology discovery in una rete SDN: quale protocollo usa, quali messaggi vengono scambiati, e come il controller costruisce la mappa dei link.
-> - Qual è la differenza tra Path Computation in SDN e routing distribuito tradizionale? Perché i FlowMod vengono inviati in ordine inverso?
-> - Confrontare l'architettura di OpenDaylight (ODL) e ONOS: cosa li distingue in termini di struttura interna e approccio alla programmabilità?
-
 ```{=latex}
 \newpage
 ```
@@ -3165,17 +2944,6 @@ Questo approccio si integra naturalmente con la **Network Function Virtualizatio
 >
 > **Service Function Chaining** con SDN permette di comporre funzioni di rete (firewall, IDS, load balancer...) in catene dinamiche, senza ricablaggio fisico — specialmente potente in combinazione con NFV.
 
-> [!question] Possibili domande d'esame
->
-> - Perché Google ha sviluppato B4? Quali sono i limiti delle WAN tradizionali che B4 risolve?
-> - Descrivere le tre categorie di traffico in B4 e come influenzano le scelte di traffic engineering.
-> - Descrivere i tre stadi di migrazione verso SDN in B4. Perché BGP è stato mantenuto?
-> - Come funziona il TE Server di B4? Cosa sono i Flow Group, i Tunnel e i Tunnel Group?
-> - Quali sono i limiti di OpenFlow che hanno motivato lo sviluppo di P4?
-> - Cosa descrive un programma P4? Quali sono le sue tre componenti principali?
-> - Come interagiscono control plane e data plane in un sistema P4?
-> - Cos'è il Service Function Chaining? Come SDN abilita SFC dinamico?
-
 ```{=latex}
 \newpage
 ```
@@ -3408,16 +3176,6 @@ Il meccanismo per la consegna dei messaggi verso uno slave è il seguente:
 ---
 
 ## Domande d'esame
-
-> [!question] Possibili domande d'esame
->
-> - Qual è il tradeoff fondamentale nei protocolli MAC per IoT e come i tre approcci (sincronizzazione, preamble sampling, polling) lo affrontano diversamente?
-> - In S-MAC, perché la latenza in percorsi multi-hop può essere elevata? In quale condizione si riduce?
-> - Perché in B-MAC il preambolo deve essere più lungo del periodo di sleep del ricevitore?
-> - In B-MAC, calcola il duty cycle del preamble sampling se $t_{check} = 4 \times 10^{-4}$ s e la frequenza di campionamento è 5 Hz: $DC_{check} = f_c \times t_{check} = 5 \times 4 \times 10^{-4} = 2 \times 10^{-3} = 0.2\%$.
-> - Come X-MAC riduce il costo energetico del preambolo rispetto a B-MAC?
-> - In BoX-MAC il preambolo è un frame dati ripetuto: quali vantaggi porta in termini di latenza e overhead?
-> - Descrivi il meccanismo di polling in IEEE 802.15.4: cosa fa il master quando riceve un messaggio per uno slave?
 
 ```{=latex}
 \newpage
@@ -3706,17 +3464,6 @@ La **Sequential Freshness** ordina la sequenza dei frame in ingresso per garanti
 >
 > IEEE 802.15.4 specifica il physical layer e il MAC layer per reti LR-WPAN. Il physical layer opera su tre bande di frequenza (868 MHz, 902 MHz, 2.4 GHz), con eccellenti prestazioni in ambienti a basso SNR. Il MAC layer distingue due tipi di dispositivi (RFD e FFD), supporta topologie a stella e peer-to-peer, e gestisce l'accesso al canale con o senza superframe. Il superframe è diviso in CAP (accesso CSMA-CA) e CFP opzionale (GTS deterministici). Il protocollo di associazione permette ai dispositivi di unirsi a una PAN esistente. La sicurezza di base — cifratura simmetrica, controllo accessi, integrità, freschezza — è integrata nel MAC layer.
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono le bande di frequenza supportate da IEEE 802.15.4 e quali data rate offrono?
-> - Qual è la differenza tra RFD e FFD?
-> - Come funziona la struttura del superframe? Qual è la differenza tra CAP e CFP?
-> - Perché il CAP non può essere eliminato anche quando è presente il CFP?
-> - Descrivi il trasferimento di dati da coordinatore a end-device in una rete beacon-enabled.
-> - Descrivi il protocollo di associazione dal lato end-device e dal lato coordinatore.
-> - Quali servizi di sicurezza offre il MAC layer di IEEE 802.15.4?
-> - Qual è la differenza tra accesso al canale beacon-enabled e non beacon-enabled?
-
 ```{=latex}
 \newpage
 ```
@@ -3943,15 +3690,6 @@ Il dispositivo utilizza due strutture dati:
 
 1. **Struttura per il modello**: memorizza i pesi della rete neurale o i vettori di supporto dell'SVM (0,1–3,5 KB a seconda del modello).
 2. **Struttura per i campioni**: memorizza al massimo una finestra di **300 campioni** (nel caso peggiore), ovvero circa 3 KB a 10 bit per campione. Con ESN, la finestra utile è di soli 90 campioni.
-
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra biotelemetria e bio-logging? Quando conviene l'uno e quando l'altro?
-> - Perché l'approccio con classificatore on-board è superiore a quello con trasmissione delle serie temporali grezze?
-> - Come funziona la macchina a stati di Tortoise@ per ottimizzare l'efficienza energetica?
-> - Confronta le performance di IDNN, CNN, ESN e SVM nel task asincrono. Quale sceglieresti per un microcontrollore con 1 KB di RAM libera? Perché?
-> - Quanto dato deve memorizzare il dispositivo Tortoise@ con elaborazione locale, rispetto all'approccio cloud? Calcola la differenza.
-> - Cos'è un task sincrono vs asincrono nel contesto dell'activity recognition? Quale rete neurale supporta il task sincrono e perché?
 
 ```{=latex}
 \newpage
@@ -4241,16 +3979,6 @@ NFV è applicabile sia alle funzioni del **piano dati** che a quelle del **piano
 > Con NFV, gli elementi di rete sono **applicazioni indipendenti** deployate in modo flessibile su una piattaforma unificata di server standard, storage e switch commodity. Software e hardware sono disaccoppiati, e la capacità per ogni applicazione viene aumentata o ridotta aggiungendo o riducendo risorse virtuali.
 >
 > I benefici principali: **flessibilità**, **innovazione più rapida**, possibilità di **scalare i servizi rapidamente** su/giù secondo le necessità.
-
-> [!question] Possibili domande d'esame
->
-> - Che cos'è un middlebox e perché la loro proliferazione ha motivato NFV?
-> - Qual è la differenza tra CAPEX e OPEX nel contesto NFV?
-> - Descrivere il Network Function Forwarding Graph e la separazione tra definizione logica e deployment fisico.
-> - Quali sono i tre componenti principali dell'architettura NFV-MANO? Descrivere le responsabilità di NFVO, VNFM e VIM.
-> - In cosa consiste il problema del VNF chain placement e quali approcci risolutivi esistono?
-> - Confrontare container e VM come opzioni di virtualizzazione per le VNF.
-> - Cosa sono gli NFVI-PoP e come si differenziano NFVI-PoP network e transport network?
 
 ```{=latex}
 \newpage
@@ -4703,16 +4431,6 @@ Durante i laboratori è utile avere familiarità con i comandi base di Docker.
 | `docker build <path>` | Costruisce un'immagine da un Dockerfile |
 | `docker commit <id> <name>` | Crea una nuova immagine da un container modificato |
 
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra Mininet e ComNetsEmu?
-> - Come vengono implementati gli host virtuali in Mininet? (network namespace)
-> - Cosa sono le veth pairs e a cosa servono?
-> - Come si configura il delay di un link virtuale in Mininet con `tc`?
-> - Qual è il ruolo di Docker in ComNetsEmu rispetto al tipo di host di default di Mininet?
-> - Cosa fa la classe `APPContainerManager` in ComNetsEmu?
-> - Qual è la differenza tra `DockerHost` e un host Mininet tradizionale?
-
 ```{=latex}
 \newpage
 ```
@@ -4936,22 +4654,6 @@ La tabella seguente mostra un esempio numerico con $N$ link da 100 Mbps e affida
 > - **Video HD real-time**: richiede alto throughput → High Throughput con bandwidth aggregation (traffic split su più link).
 
 ### Esercizio: applicabilità MTS
-
-> [!question] Possibili domande d'esame
->
-> - Dato un insieme di link wireless con parametri di QoS, determinare quale operazione MTS è necessaria per soddisfare i requisiti di ciascuna applicazione.
-> - Spiegare il trade-off tra split traffic e duplicate traffic con esempio numerico.
-> - Perché nessuna singola tecnologia di accesso può soddisfare tutti i requisiti? Come risponde MEC?
-> - Qual è la differenza tra MEC host, MEC platform e MEC application?
-> - Quali informazioni espone la RNIS API e per quali ottimizzazioni viene usata?
-
----
-
-## Implementazione e strumenti
-
-MEC è supportato da tutti i principali cloud provider con soluzioni proprietarie: **Azure private multi-access edge compute** (con partner Nokia ed Ericsson), **AWS Wavelength** (che porta l'infrastruttura AWS nei data center dei partner telco per soddisfare requisiti di bassa latenza e residenza dei dati).
-
-Per la sperimentazione, ETSI fornisce **MEC Sandbox** (`try-mec.etsi.org`), un ambiente interattivo per imparare e sperimentare con le MEC Service API senza necessità di infrastruttura fisica.
 
 ```{=latex}
 \newpage
@@ -5341,20 +5043,6 @@ void loop() {
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono le principali differenze tra un sistema embedded e un PC general purpose?
-> - Cosa si intende per co-design hardware-software?
-> - Descrivere le sfide principali della programmazione embedded (timing, affidabilità, memoria, energia).
-> - Come funziona la cross-compilazione? Cosa contiene l'eseguibile finale?
-> - Descrivere il modello di esecuzione di Arduino. Perché non usa thread multipli?
-> - Confrontare il modello Arduino con il modello TinyOS: eventi, comandi e task.
-> - Calcolare il duty cycle di un dato sketch Arduino.
-> - Quali tipi di interrupt esistono in Arduino? Descrivere `attachInterrupt()` e le modalità di trigger.
-> - Perché le variabili condivise tra loop e interrupt handler devono essere `volatile`?
-> - Descrivere le modalità di sleep dell'ATmega328P e i loro trade-off.
-> - Scrivere un frammento di codice che configuri INT0 su CHANGE e gestisca il risveglio da sleep con un interrupt esterno.
-
 ```{=latex}
 \newpage
 ```
@@ -5670,25 +5358,12 @@ $$E_c(T) \leq \rho_c T + \delta$$
 > 2. $B_0 \geq \sigma + \delta$ — la carica iniziale copre le oscillazioni nel caso peggiore.
 > 3. $B_{\mathrm{max}} \geq B_0$ — la carica iniziale è fisicamente ammissibile.
 
-
 ---
 
 ## Riepilogo
 
 ![Diagramma Mermaid](images/mermaid-lezione-24-energy-harvesting-iot-03.png)
 *Fig. — Mappa concettuale della lezione.*
-
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra architettura Harvest-Use e Harvest-Store-Use? In quale caso si applica ciascuna?
-> - Scrivi le equazioni di conservazione dell'energia e di capacità finita per un buffer non ideale. Qual è la differenza tra condizione necessaria e sufficiente?
-> - Classifica le sorgenti di energia per controllabilità e prevedibilità. Perché la prevedibilità è importante per la pianificazione?
-> - Come si misura la carica di una batteria tramite ADC? Ricava la formula di conversione da campione ADC a carica in mAh.
-> - Enuncia il teorema di Kansal: quali sono le tre condizioni sufficienti per la neutralità energetica?
-> - Descrivi l'algoritmo di Kansal nei due casi (sovrapproduzione e sottoproduzione). Come funziona l'adattamento dinamico?
-> - Come funziona il filtro EWMA per la previsione della produzione energetica solare?
-> - Cos'è il modello a task? In cosa supera l'approccio di Kansal?
-> - Qual è la complessità del problema di ottimizzazione a task? Come si risolve con la programmazione dinamica?
 
 ```{=latex}
 \newpage
@@ -5938,19 +5613,6 @@ $$s^*(t) = \sum_{n=-\infty}^{+\infty} s(t - nT)$$
 Questo passaggio è cruciale: la serie di Fourier non può rappresentare segnali davvero aperiodici. Per questi occorre la **Trasformata di Fourier** (argomento delle lezioni successive), che è in un certo senso il limite della serie di Fourier per $T \to \infty$.
 
 ---
-
-> [!question] Possibili domande d'esame
->
-> - Quali sono le quattro classi di segnali secondo la classificazione tempo/ampiezza? Fai esempi.
-> - Cos'è il bitrate di una sorgente digitale? Come dipende da frequenza di campionamento e bit per campione?
-> - Enuncia il teorema di Shannon sulla capacità di canale. Come lega SNR, banda e bitrate?
-> - Cos'è la serie di Fourier? Scrivi la formula generale e i coefficienti $a_0$, $a_n$, $b_n$.
-> - Quali sono le condizioni sufficienti di Dirichlet per l'esistenza della serie di Fourier?
-> - Cos'è il fenomeno di Gibbs? Perché non scompare aggiungendo più armoniche?
-> - Come si passa dalla serie di Fourier reale a quella in forma esponenziale complessa?
-> - Cos'è lo spettro di un segnale? Perché si rappresentano due diagrammi separati (ampiezza e fase)?
-> - Perché la serie di Fourier di un segnale aperiodico produce la sua estensione periodica?
-> - Calcola i coefficienti della serie di Fourier per un'onda quadra semplice (es. $s(t) = 1$ per $0 < t < T/2$, $s(t) = -1$ per $T/2 < t < T$).
 
 ```{=latex}
 \newpage
@@ -6237,94 +5899,6 @@ In Wireshark si possono distinguere tre tipi di messaggi OpenFlow rilevanti:
 - `PACKET_OUT`: il controller risponde con l'azione immediata per il pacchetto corrente
 - `FLOW_MOD`: il controller installa la regola permanente sullo switch
 
-> [!question] Possibili domande d'esame
->
-> - Quante coppie PACKET_IN / PACKET_OUT vengono scambiate durante un ping h1↔h3? Perché?
-> - Qual è l'azione di default installata da `switch_features_handler`? A cosa serve?
-> - Perché il controller non riceve tutti i pacchetti del ping, ma solo i primissimi?
-> - Cosa succederebbe se si eliminassero le flow rule di S2 durante una comunicazione attiva?
-
-> [!tip] Risposta alla prima domanda
->
-> Per il primo ping (ICMP Echo Request + Reply) ci sono **due scambi** PACKET_IN/PACKET_OUT: uno per il pacchetto dal h1 verso h3 (che imposta la regola su S1, S2, S4 nel percorso di andata) e uno per la risposta da h3 verso h1. I ping successivi non generano PACKET_IN perché le flow rule sono già installate.
-
----
-
-#### Esercizio B: service chain con un firewall
-
-La **service chain** (o *function chaining*) è il meccanismo con cui il traffico viene deviato attraverso una sequenza di funzioni di rete prima di raggiungere la destinazione. Nell'esercizio B si simula l'inserimento di un firewall (S5) nel percorso dell'upper slice.
-
-![Topologia Esercizio B con switch S5 come firewall inline collegato a S2](images/lezione-26-lab-network-slicing-img-05.jpg)
-
-*Fig. — Topologia Esercizio B: S5 è inserito tra S2-eth3 e S2-eth4, creando un percorso inline per filtrare il traffico dell'upper slice.*
-
-Il percorso fisico del pacchetto diventa: h1 → s1 → **s2-eth1** → **s2-eth3** → **s5-eth1** → **s5-eth2** → **s2-eth4** → **s2-eth2** → s4 → h3.
-
-**Procedura:**
-
-1. **Modifica `network.py`**: aggiungere lo switch S5 e due link verso S2
-   ```python
-   self.addSwitch("s5", **{"dpid": "%016x" % 5})
-   self.addLink("s2", "s5")  # s2-eth3 ↔ s5-eth1
-   self.addLink("s5", "s2")  # s5-eth2 ↔ s2-eth4
-   ```
-
-2. **Non modificare `topologyslicing.py`**: il controller gestirà S5 con le regole di table-miss (invia al controller), ma noi installeremo le regole manualmente con `ovs-ofctl`.
-
-3. Avviare controller e Mininet, verificare la connettività h1↔h3 (deve funzionare, S5 viene gestito con il comportamento di default).
-
-4. **Terminare il controller** con Ctrl-C.
-
-5. **Modificare manualmente le flow rule su S2** per redirigere il traffico attraverso S5:
-   ```bash
-   # Traffico in arrivo da s1 (eth1) → manda a s5 (eth3) invece che a s4 (eth2)
-   mininet> sh ovs-ofctl add-flow s2 in_port=1,priority=10,actions=output:3
-   # Traffico di ritorno da s5 (eth4) → manda verso s4 (eth2)
-   mininet> sh ovs-ofctl add-flow s2 in_port=4,priority=10,actions=output:2
-   ```
-
-6. **Aggiungere flow rule su S5** per i tre scenari richiesti:
-
-   **a) Tutto il traffico è permesso (forwarding semplice)**
-   ```bash
-   mininet> sh ovs-ofctl add-flow s5 in_port=1,priority=10,actions=output:2
-   mininet> sh ovs-ofctl add-flow s5 in_port=2,priority=10,actions=output:1
-   ```
-
-   **b) Blocca i pacchetti ICMP** (ping non funziona, iperf TCP sì)
-   ```bash
-   mininet> sh ovs-ofctl add-flow s5 icmp,priority=20,actions=drop
-   mininet> sh ovs-ofctl add-flow s5 in_port=1,priority=10,actions=output:2
-   mininet> sh ovs-ofctl add-flow s5 in_port=2,priority=10,actions=output:1
-   ```
-
-   **c) Blocca il traffico TCP** (iperf non funziona, ping sì)
-   ```bash
-   mininet> sh ovs-ofctl add-flow s5 tcp,priority=20,actions=drop
-   mininet> sh ovs-ofctl add-flow s5 in_port=1,priority=10,actions=output:2
-   mininet> sh ovs-ofctl add-flow s5 in_port=2,priority=10,actions=output:1
-   ```
-
-**Comandi utili per l'esercizio B:**
-
-| Comando | Funzione |
-|---|---|
-| `ovs-ofctl del-flows <sw> in_port=<p>` | Rimuove tutte le regole con quella porta in ingresso |
-| `ovs-ofctl del-flows <sw> <proto>` | Rimuove regole per protocollo (icmp, tcp, udp…) |
-| `ovs-ofctl add-flow <sw> <match>,priority=<p>,actions=<a>` | Aggiunge una flow rule |
-| `sudo tcpdump -i s5-eth1` | Sniffa pacchetti sull'interfaccia virtuale di s5 |
-
-> [!note] Priority nelle flow rule
->
-> OpenFlow sceglie la regola con **priorità più alta** tra quelle che fanno match su un pacchetto. Impostare la regola di drop a priorità 20 e il forwarding generico a 10 garantisce che i pacchetti ICMP (o TCP) vengano bloccati prima di essere inoltrati. L'ordine di inserimento non conta, conta solo la priorità numerica.
-
-> [!question] Possibili domande d'esame
->
-> - Come si implementa una service chain senza modificare il controller SDN?
-> - Qual è la differenza tra un approccio di slicing basato su porte fisiche e uno basato su header di pacchetto (es. VLAN, IP)?
-> - Perché nella topologia con S5 è necessario terminare il controller prima di installare le regole manuali?
-> - Come si verificherebbe che i pacchetti TCP vengono effettivamente droppati da S5 e non semplicemente non raggiungono S4?
-
 ```{=latex}
 \newpage
 ```
@@ -6588,28 +6162,6 @@ Il calcolo diretto della DFT richiede $O(N^2)$ operazioni. Per sequenze lunghe (
 **Risoluzione in frequenza.** La DFT non ha una risoluzione arbitraria: i "bin" sono spaziati di $\Delta f = f_s / N$. Se una componente del segnale cade tra due bin, la sua energia si spalma su più bin adiacenti (**spectral leakage**). Per migliorare la risoluzione si deve aumentare $N$ (osservare il segnale più a lungo).
 
 **Frequenza di Nyquist nella DFT.** L'analisi spettrale affidabile tramite DFT è possibile solo per frequenze $f < f_s/2$: le componenti oltre la frequenza di Nyquist vengono mappate a frequenze errate (aliasing). Filtri anti-aliasing vengono applicati prima del campionamento per rimuovere le componenti fuori banda.
-
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza concettuale tra serie di Fourier e trasformata di Fourier?
-> - Perché campionare un segnale genera repliche spettrali? Cosa succede se le repliche si sovrappongono?
-> - Enunciare il teorema di Nyquist-Shannon. Quali sono le sue ipotesi e i suoi limiti pratici?
-> - Cosa si intende per aliasing? Come si previene?
-> - Cosa si intende per risoluzione della DFT? Come si può migliorarla?
-> - Qual è la complessità computazionale della DFT e della FFT?
-> - Perché nessun segnale reale è strettamente a banda limitata? Quali conseguenze ha questo per il campionamento?
-
----
-
-> [!abstract] Riepilogo dei domini di Fourier
->
-> | Strumento | Tipo di segnale | Tipo di spettro | Operatori |
-> |---|---|---|---|
-> | **Serie di Fourier** | Periodico continuo | Discreto (coefficienti $S_n$) | Integrale → Somma |
-> | **CFT** | Non periodico continuo | Continuo $S(f)$ | Integrale → Integrale |
-> | **DFT** | Discreto (N campioni) | Discreto (N coefficienti) | Somma → Somma |
->
-> La DFT può essere vista come la serie di Fourier del segnale campionato, trattato come periodico con periodo $T = N/f_s$.
 
 ```{=latex}
 \newpage
@@ -7069,16 +6621,6 @@ I test simulano applicazioni con duty cycle tra 2% e 46% su batteria KL-SUN3W da
 - A. Caruso, S. Chessa, S. Escolar, X. del Toro, J.C. Carlos López, *A Dynamic Programming Algorithm for High-Level Task Scheduling in Energy Harvesting IoT*, IEEE Internet of Things Journal, 5(3):2234–2248 (2018).
 
 ---
-
-> [!question] Possibili domande d'esame
->
-> - Enuncia il teorema di Kansal: quali sono le tre condizioni sufficienti per la neutralità energetica?
-> - Descrivi la funzione di utility $u(dc)$ e spiega come si calcolano i parametri $\alpha$ e $\beta$.
-> - Descrivi l'algoritmo di Kansal nei due casi (sovraproduzione e sottoproduzione) e applica l'algoritmo a una tabella di produzione fornita.
-> - Qual è il ruolo del filtro EWMA nella previsione della produzione energetica?
-> - Cos'è un "task" nel modello task-based e perché il problema di ottimizzazione è NP-Hard?
-> - Scrivi la ricorrenza di programmazione dinamica per il modello task-based e discutine la complessità.
-> - Quali sono i limiti dell'algoritmo di Kansal rispetto al modello task-based?
 
 ```{=latex}
 \newpage

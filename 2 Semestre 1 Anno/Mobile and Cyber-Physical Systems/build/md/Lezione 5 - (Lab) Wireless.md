@@ -121,12 +121,3 @@ Per mitigare questi limiti è necessario adottare meccanismi appositi. Il **CSMA
 
 Nello stack dei protocolli per reti wireless, mentre i livelli Applicazione e Trasporto (TCP/UDP) restano identici al mondo cablato, le fondamenta si differenziano profondamente. Il livello di Rete per ecosistemi senza infrastruttura si affida a protocolli speciali come AODV, DSR o DYMO. Il livello Datalink implementa l'accesso al mezzo tramite il protocollo **CSMA/CA** (*Carrier Sense Multiple Access with Collision Avoidance*), appositamente studiato per aggirare le trappole dei collegamenti radio.
 
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra una rete wireless single-hop e multi-hop con infrastruttura? Fare esempi concreti.
-> - Perché il CSMA/CD non può essere applicato nelle reti wireless? Quale protocollo lo sostituisce e con quale logica?
-> - Definire la Shannon Capacity e spiegare perché la capacità scala logaritmicamente con l'SNR e non linearmente.
-> - Descrivere il problema del terminale nascosto: come si manifesta e perché il meccanismo di rilevamento delle collisioni classico non lo rileva?
-> - Cosa si intende per Multipath e Coherence Time? Come la velocità del ricevitore influenza il $T_c$?
-> - Spiegare il trade-off tra SNR e scelta dello schema di modulazione (es. BPSK vs QAM-256).
-> - Cosa distingue la banda ISM dalla banda licenziata? Perché la banda 2.4 GHz è particolarmente soggetta a interferenze?

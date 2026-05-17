@@ -230,18 +230,3 @@ La tabella seguente mostra un esempio numerico con $N$ link da 100 Mbps e affida
 
 ### Esercizio: applicabilità MTS
 
-> [!question] Possibili domande d'esame
->
-> - Dato un insieme di link wireless con parametri di QoS, determinare quale operazione MTS è necessaria per soddisfare i requisiti di ciascuna applicazione.
-> - Spiegare il trade-off tra split traffic e duplicate traffic con esempio numerico.
-> - Perché nessuna singola tecnologia di accesso può soddisfare tutti i requisiti? Come risponde MEC?
-> - Qual è la differenza tra MEC host, MEC platform e MEC application?
-> - Quali informazioni espone la RNIS API e per quali ottimizzazioni viene usata?
-
----
-
-## Implementazione e strumenti
-
-MEC è supportato da tutti i principali cloud provider con soluzioni proprietarie: **Azure private multi-access edge compute** (con partner Nokia ed Ericsson), **AWS Wavelength** (che porta l'infrastruttura AWS nei data center dei partner telco per soddisfare requisiti di bassa latenza e residenza dei dati).
-
-Per la sperimentazione, ETSI fornisce **MEC Sandbox** (`try-mec.etsi.org`), un ambiente interattivo per imparare e sperimentare con le MEC Service API senza necessità di infrastruttura fisica.

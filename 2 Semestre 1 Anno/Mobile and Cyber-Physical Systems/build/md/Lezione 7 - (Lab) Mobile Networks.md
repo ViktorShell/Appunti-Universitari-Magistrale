@@ -351,15 +351,3 @@ Il 5G mantiene la struttura concettuale di AKA ma ne irrobustisce due aspetti ch
 >
 > L'evoluzione dalle reti cellulari analogiche al 5G è una trasformazione architetturale, non solo un aumento di velocità. Il cuore della trasformazione è il passaggio a un **All-IP core** (introdotto in 4G con l'EPC) e poi a una **Service Based Architecture cloud-native** (in 5G con l'NG-Core), con netta separazione di control plane e data plane e con le funzioni di rete organizzate come **microservizi** indipendenti. Il **tunneling GTP** è il pilastro che abilita la mobilità trasparente: gli IP del traffico restano fissi, cambiano solo gli endpoint dei tunnel quando l'utente si sposta. Il protocollo **AKA** garantisce mutua autenticazione UE↔rete sfruttando una chiave simmetrica condivisa fra SIM e home HSS; il 5G rafforza la sicurezza spostando la decisione finale alla home network e cifrando l'IMSI con crittografia a chiave pubblica per prevenire attacchi di tracciamento. Sul fronte radio, **5G NR** combina sub-6 GHz e onde millimetriche con MIMO e densità di celle elevate, abilitando i tre macro-scenari **eMBB**, **URLLC** e **mMTC**.
 
-> [!question] Possibili domande d'esame
->
-> - Descrivi i tre blocchi dell'architettura cellulare 4G/5G (RAN, Backhaul, Mobile Core) e le rispettive responsabilità.
-> - A cosa servono MME, HSS, S-GW e P-GW nel 4G LTE? Quale di questi sta sul piano dati e quale su quello di controllo?
-> - Spiega in dettaglio come il tunneling GTP supporti la mobilità senza interrompere le sessioni TCP attive.
-> - Confronta il modello 4G EPC con il 5G NG-Core: quale ruolo del 4G corrisponde a quale Network Function 5G?
-> - Cos'è la Service Based Architecture? Perché il 5G la adotta?
-> - Descrivi i passi del protocollo AKA in 4G. Perché basta confrontare $\text{res}_M$ con $\text{xres}_{HSS}$?
-> - Quali sono le due differenze principali fra autenticazione 4G e 5G? Quale problema concreto risolvono?
-> - Cosa distingue Standalone e Non-Standalone come opzioni di deployment 5G?
-> - Perché l'UPF abilita il Multi-Access Edge Computing?
-> - Confronta brevemente Wi-Fi e 4G LTE dal punto di vista dell'autenticazione.

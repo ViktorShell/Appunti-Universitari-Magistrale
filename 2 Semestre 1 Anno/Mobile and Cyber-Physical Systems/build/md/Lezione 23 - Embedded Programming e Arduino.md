@@ -393,16 +393,3 @@ void loop() {
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono le principali differenze tra un sistema embedded e un PC general purpose?
-> - Cosa si intende per co-design hardware-software?
-> - Descrivere le sfide principali della programmazione embedded (timing, affidabilità, memoria, energia).
-> - Come funziona la cross-compilazione? Cosa contiene l'eseguibile finale?
-> - Descrivere il modello di esecuzione di Arduino. Perché non usa thread multipli?
-> - Confrontare il modello Arduino con il modello TinyOS: eventi, comandi e task.
-> - Calcolare il duty cycle di un dato sketch Arduino.
-> - Quali tipi di interrupt esistono in Arduino? Descrivere `attachInterrupt()` e le modalità di trigger.
-> - Perché le variabili condivise tra loop e interrupt handler devono essere `volatile`?
-> - Descrivere le modalità di sleep dell'ATmega328P e i loro trade-off.
-> - Scrivere un frammento di codice che configuri INT0 su CHANGE e gestisca il risveglio da sleep con un interrupt esterno.

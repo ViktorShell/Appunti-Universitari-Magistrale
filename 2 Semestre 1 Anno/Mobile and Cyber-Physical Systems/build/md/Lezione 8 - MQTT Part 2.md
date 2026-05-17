@@ -149,15 +149,3 @@ Entrambi i protocolli hanno oggi lo status di standard riconosciuti per l'IoT. C
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Cosa memorizza il broker e cosa memorizza il client in una sessione persistente con QoS 2?
-> - Qual è la differenza tra sessione persistente e retained message? Sono meccanismi indipendenti?
-> - In quali quattro circostanze il broker invia il messaggio di last will?
-> - Come è strutturato il Fixed Header di un pacchetto MQTT? Cosa codifica il primo byte?
-> - Perché PubSubClient non supporta QoS 2 e SSL/TLS? Qual è il vincolo architetturale?
-> - Perché HTTP scala male per reti IoT con molti dispositivi rispetto a MQTT?
-> - Quali sono i tre limiti strutturali di MQTT (broker, risorse, TCP)?
-> - Cosa cambia nell'architettura client/server di CoAP rispetto al web tradizionale?
-> - Perché CoAP usa UDP invece di TCP? Quali vantaggi porta e quali svantaggi introduce?
-> - In quale scenario sceglieresti CoAP su MQTT e viceversa?

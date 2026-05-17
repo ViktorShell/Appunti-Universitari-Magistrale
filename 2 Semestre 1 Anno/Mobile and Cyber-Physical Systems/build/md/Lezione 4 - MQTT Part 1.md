@@ -152,17 +152,3 @@ Quando un dispositivo IoT si disconnette temporaneamente, il rischio è di perde
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono i limiti dello stack TCP/IP tradizionale per l'IoT? Quali requisiti specifici impongono i dispositivi IoT a livello di rete e applicativo?
-> - Descrivere il paradigma publish/subscribe e i tre tipi di disaccoppiamento che introduce rispetto al modello client/server.
-> - Qual è il ruolo del broker MQTT? Quali operazioni svolge?
-> - Quali sono le differenze tra i tre metodi di filtraggio dei messaggi (topic-based, content-based, type-based)?
-> - Descrivere la struttura del pacchetto CONNECT e il significato di ciascun campo (Client ID, Clean Session, Will flags, KeepAlive).
-> - Cosa contiene un pacchetto SUBSCRIBE e come risponde il broker con SUBACK?
-> - Come funzionano le wildcard `+` e `#` nei topic MQTT? Fornire esempi.
-> - Perché si evita di usare il wildcard `#` indiscriminatamente nelle sottoscrizioni?
-> - Spiegare i tre livelli QoS di MQTT: garanzie offerte, meccanismi usati e casi d'uso ideali.
-> - Descrivere il handshake a quattro fasi di QoS 2 (PUBLISH → PUBREC → PUBREL → PUBCOMP). Perché sono necessarie quattro fasi invece di due?
-> - Il QoS tra publisher e broker può differire da quello tra broker e subscriber? Perché?
-> - Cosa sono le persistent session in MQTT e quando conviene usarle?

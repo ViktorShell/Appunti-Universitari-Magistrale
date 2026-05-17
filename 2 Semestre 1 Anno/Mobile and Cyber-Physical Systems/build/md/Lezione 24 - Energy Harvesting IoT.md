@@ -319,7 +319,6 @@ $$E_c(T) \leq \rho_c T + \delta$$
 > 2. $B_0 \geq \sigma + \delta$ — la carica iniziale copre le oscillazioni nel caso peggiore.
 > 3. $B_{\mathrm{max}} \geq B_0$ — la carica iniziale è fisicamente ammissibile.
 
-
 ---
 
 ## Riepilogo
@@ -327,14 +326,3 @@ $$E_c(T) \leq \rho_c T + \delta$$
 ![Diagramma Mermaid](images/mermaid-lezione-24-energy-harvesting-iot-03.png)
 *Fig. — Mappa concettuale della lezione.*
 
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra architettura Harvest-Use e Harvest-Store-Use? In quale caso si applica ciascuna?
-> - Scrivi le equazioni di conservazione dell'energia e di capacità finita per un buffer non ideale. Qual è la differenza tra condizione necessaria e sufficiente?
-> - Classifica le sorgenti di energia per controllabilità e prevedibilità. Perché la prevedibilità è importante per la pianificazione?
-> - Come si misura la carica di una batteria tramite ADC? Ricava la formula di conversione da campione ADC a carica in mAh.
-> - Enuncia il teorema di Kansal: quali sono le tre condizioni sufficienti per la neutralità energetica?
-> - Descrivi l'algoritmo di Kansal nei due casi (sovrapproduzione e sottoproduzione). Come funziona l'adattamento dinamico?
-> - Come funziona il filtro EWMA per la previsione della produzione energetica solare?
-> - Cos'è il modello a task? In cosa supera l'approccio di Kansal?
-> - Qual è la complessità del problema di ottimizzazione a task? Come si risolve con la programmazione dinamica?

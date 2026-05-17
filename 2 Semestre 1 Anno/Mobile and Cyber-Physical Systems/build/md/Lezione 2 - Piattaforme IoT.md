@@ -114,10 +114,3 @@ Poiché numerosi endpoint faticano a gestire la mutua autenticazione per limiti 
 
 ---
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono le differenze tra Edge Computing, Fog Computing e Cloud Computing nell'IoT, e in quali scenari è preferibile ciascun approccio?
-> - Come funziona il Federated Learning e quali sono i principali attacchi a cui è soggetto?
-> - Perché i database NoSQL sono preferiti ai database relazionali nei contesti IoT? Quali vantaggi offre MongoDB?
-> - Cosa si intende per vendor lock-in e vertical silos? Come il 5G e gli standard di interoperabilità cercano di ovviare a questi problemi?
-> - Quali sono le principali vulnerabilità di sicurezza nei dispositivi IoT embedded e come vengono mitigate a livello di piattaforma?

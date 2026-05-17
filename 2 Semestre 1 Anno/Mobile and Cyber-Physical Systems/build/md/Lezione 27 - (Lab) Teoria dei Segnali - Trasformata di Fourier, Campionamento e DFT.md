@@ -272,24 +272,3 @@ Il calcolo diretto della DFT richiede $O(N^2)$ operazioni. Per sequenze lunghe (
 
 **Frequenza di Nyquist nella DFT.** L'analisi spettrale affidabile tramite DFT è possibile solo per frequenze $f < f_s/2$: le componenti oltre la frequenza di Nyquist vengono mappate a frequenze errate (aliasing). Filtri anti-aliasing vengono applicati prima del campionamento per rimuovere le componenti fuori banda.
 
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza concettuale tra serie di Fourier e trasformata di Fourier?
-> - Perché campionare un segnale genera repliche spettrali? Cosa succede se le repliche si sovrappongono?
-> - Enunciare il teorema di Nyquist-Shannon. Quali sono le sue ipotesi e i suoi limiti pratici?
-> - Cosa si intende per aliasing? Come si previene?
-> - Cosa si intende per risoluzione della DFT? Come si può migliorarla?
-> - Qual è la complessità computazionale della DFT e della FFT?
-> - Perché nessun segnale reale è strettamente a banda limitata? Quali conseguenze ha questo per il campionamento?
-
----
-
-> [!abstract] Riepilogo dei domini di Fourier
->
-> | Strumento | Tipo di segnale | Tipo di spettro | Operatori |
-> |---|---|---|---|
-> | **Serie di Fourier** | Periodico continuo | Discreto (coefficienti $S_n$) | Integrale → Somma |
-> | **CFT** | Non periodico continuo | Continuo $S(f)$ | Integrale → Integrale |
-> | **DFT** | Discreto (N campioni) | Discreto (N coefficienti) | Somma → Somma |
->
-> La DFT può essere vista come la serie di Fourier del segnale campionato, trattato come periodico con periodo $T = N/f_s$.

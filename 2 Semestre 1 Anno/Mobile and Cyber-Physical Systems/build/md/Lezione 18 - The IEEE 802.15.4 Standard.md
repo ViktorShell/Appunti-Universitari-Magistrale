@@ -281,13 +281,3 @@ La **Sequential Freshness** ordina la sequenza dei frame in ingresso per garanti
 >
 > IEEE 802.15.4 specifica il physical layer e il MAC layer per reti LR-WPAN. Il physical layer opera su tre bande di frequenza (868 MHz, 902 MHz, 2.4 GHz), con eccellenti prestazioni in ambienti a basso SNR. Il MAC layer distingue due tipi di dispositivi (RFD e FFD), supporta topologie a stella e peer-to-peer, e gestisce l'accesso al canale con o senza superframe. Il superframe è diviso in CAP (accesso CSMA-CA) e CFP opzionale (GTS deterministici). Il protocollo di associazione permette ai dispositivi di unirsi a una PAN esistente. La sicurezza di base — cifratura simmetrica, controllo accessi, integrità, freschezza — è integrata nel MAC layer.
 
-> [!question] Possibili domande d'esame
->
-> - Quali sono le bande di frequenza supportate da IEEE 802.15.4 e quali data rate offrono?
-> - Qual è la differenza tra RFD e FFD?
-> - Come funziona la struttura del superframe? Qual è la differenza tra CAP e CFP?
-> - Perché il CAP non può essere eliminato anche quando è presente il CFP?
-> - Descrivi il trasferimento di dati da coordinatore a end-device in una rete beacon-enabled.
-> - Descrivi il protocollo di associazione dal lato end-device e dal lato coordinatore.
-> - Quali servizi di sicurezza offre il MAC layer di IEEE 802.15.4?
-> - Qual è la differenza tra accesso al canale beacon-enabled e non beacon-enabled?

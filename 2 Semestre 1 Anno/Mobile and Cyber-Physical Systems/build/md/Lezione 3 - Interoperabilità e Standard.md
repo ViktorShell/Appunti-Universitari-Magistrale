@@ -80,10 +80,3 @@ In un'architettura IoT, il gateway agisce spesso come punto centrale di applicaz
 >
 > I **dispositivi vincolati** (*constrained devices*) pongono ostacoli concreti all'implementazione di questi requisiti. Ad esempio, garantire la sicurezza dei dati archiviati su un dispositivo privo di capacità hardware di crittografia può risultare impraticabile. Con la diffusione del *Massive IoT*, la **privacy** diventa un'area di crescente preoccupazione: l'enorme mole di dati sensibili — medici, di posizione, sulle abitudini — raccolti da governi e aziende amplifica i rischi in modo proporzionale alla scala del deployment.
 
-> [!question] Possibili domande d'esame
->
-> - Cosa si intende per vertical silo e vendor lock-in nell'IoT? Qual è la relazione tra i due concetti?
-> - Quali sono le tre macro-categorie di scenari d'uso del 5G e quali requisiti tecnici le caratterizzano?
-> - Descrivere le configurazioni di integrazione Tipo A, B, C e D: quando è necessario un gateway applicativo?
-> - Quali sono i requisiti di sicurezza identificati dalla raccomandazione ITU-T Y.2066?
-> - Qual è il ruolo del gateway nella sicurezza IoT e quali limitazioni incontrano i dispositivi vincolati?

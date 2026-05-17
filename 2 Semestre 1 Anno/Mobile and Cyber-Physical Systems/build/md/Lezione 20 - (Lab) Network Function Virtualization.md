@@ -294,12 +294,3 @@ NFV è applicabile sia alle funzioni del **piano dati** che a quelle del **piano
 >
 > I benefici principali: **flessibilità**, **innovazione più rapida**, possibilità di **scalare i servizi rapidamente** su/giù secondo le necessità.
 
-> [!question] Possibili domande d'esame
->
-> - Che cos'è un middlebox e perché la loro proliferazione ha motivato NFV?
-> - Qual è la differenza tra CAPEX e OPEX nel contesto NFV?
-> - Descrivere il Network Function Forwarding Graph e la separazione tra definizione logica e deployment fisico.
-> - Quali sono i tre componenti principali dell'architettura NFV-MANO? Descrivere le responsabilità di NFVO, VNFM e VIM.
-> - In cosa consiste il problema del VNF chain placement e quali approcci risolutivi esistono?
-> - Confrontare container e VM come opzioni di virtualizzazione per le VNF.
-> - Cosa sono gli NFVI-PoP e come si differenziano NFVI-PoP network e transport network?

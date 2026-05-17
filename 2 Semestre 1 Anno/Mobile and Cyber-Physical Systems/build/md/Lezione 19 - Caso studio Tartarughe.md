@@ -222,11 +222,3 @@ Il dispositivo utilizza due strutture dati:
 1. **Struttura per il modello**: memorizza i pesi della rete neurale o i vettori di supporto dell'SVM (0,1–3,5 KB a seconda del modello).
 2. **Struttura per i campioni**: memorizza al massimo una finestra di **300 campioni** (nel caso peggiore), ovvero circa 3 KB a 10 bit per campione. Con ESN, la finestra utile è di soli 90 campioni.
 
-> [!question] Possibili domande d'esame
->
-> - Qual è la differenza tra biotelemetria e bio-logging? Quando conviene l'uno e quando l'altro?
-> - Perché l'approccio con classificatore on-board è superiore a quello con trasmissione delle serie temporali grezze?
-> - Come funziona la macchina a stati di Tortoise@ per ottimizzare l'efficienza energetica?
-> - Confronta le performance di IDNN, CNN, ESN e SVM nel task asincrono. Quale sceglieresti per un microcontrollore con 1 KB di RAM libera? Perché?
-> - Quanto dato deve memorizzare il dispositivo Tortoise@ con elaborazione locale, rispetto all'approccio cloud? Calcola la differenza.
-> - Cos'è un task sincrono vs asincrono nel contesto dell'activity recognition? Quale rete neurale supporta il task sincrono e perché?
